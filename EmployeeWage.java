@@ -7,37 +7,37 @@ public class EmployeeWage {
 		System.out.println("Welcome to Employee Wage Computation Program");
 		final int WAGE_PER_HR = 20;
 		final int WORKING_DAYS = 20;
+		int max_emp_hr = 100;
 		int emp_hr = 0;
-		int pay = 0;
-		int total = 0;
-		for(int day = 0; day <= 20; day++){
-		int num = (int) (Math.floor((Math.random() * 10)) % 3);
-	//	System.out.println(num);
+		int dailyWage = 0;
+		int totalEmpWage = 0;
+
+		int total_emp_hr = 0;
+		int total_working_days = 1;
+		int empCheck =0;
+		while(total_emp_hr  <= max_emp_hr && total_working_days  <= WORKING_DAYS){
+
+			empCheck = (int) (Math.floor((Math.random() * 10)) % 3);
+			switch (empCheck) {
+			case 1:
+				emp_hr = 8;
+				break;
+
+			case 2:
+				emp_hr = 4;
+				break;
+
+			default:
+				emp_hr = 0;
+
+			}
 		
-		switch(num) {
-		case 1:
-			
-			//System.out.println("Employee is Present full time ");
-			emp_hr = 8;
-		break;
-		
-		case 2: 
-			 // System.out.println("Employee is present part-time");
-			  emp_hr = 4;
-		break;
-		
-		default :
-			//System.out.println("Employee is Absent ");
-			emp_hr = 0;
-			
-	
+			total_emp_hr = total_emp_hr+emp_hr;
+			System.out.println("Total days "+total_working_days+ " Total working hrs "+total_emp_hr);
+			total_working_days++;
 		}
-		pay = WAGE_PER_HR * emp_hr;
-		// System.out.println("Employee Daily wage is "+pay);	
-		total = total + pay ;
-		//System.out.println(pay);
-	}
-		System.out.println("Monthly wage is "+total);
+			totalEmpWage = total_emp_hr*WAGE_PER_HR;
+		System.out.println("Monthly wage is " + totalEmpWage);
 	}
 
 }
