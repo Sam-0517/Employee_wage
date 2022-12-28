@@ -6,7 +6,7 @@ public class EmployeeWage {
 	int max_emp_hr = 100;
 	int emp_hr = 0;
 	int dailyWage = 0;
-	int totalEmpWage = 0;
+	static int totalEmpWage = 0;
 
 	int total_emp_hr = 0;
 	int total_working_days = 1;
@@ -36,7 +36,7 @@ public class EmployeeWage {
 			total_working_days++;
 		}
 		totalEmpWage = total_emp_hr * WAGE_PER_HR;
-		System.out.println("Monthly wage is " + totalEmpWage);
+		
 
 	}
 
@@ -47,6 +47,7 @@ public class EmployeeWage {
 
 		EmployeeWage obj = new EmployeeWage();
 		obj.emplpoyeeWage();
+		System.out.println("Monthly wage is " + totalEmpWage);
 	}
 
 }
